@@ -159,7 +159,7 @@ export default function App() {
     let scene = new THREE.Scene();
     let renderer = new THREE.WebGLRenderer({
       canvas: stage,
-      alpha: true
+      alpha: true,
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -198,8 +198,8 @@ export default function App() {
         u_mouse: { value: mouse },
         u_time: { value: 0 },
         u_res: {
-          value: new THREE.Vector2(window.innerWidth, window.innerHeight)
-        }
+          value: new THREE.Vector2(window.innerWidth, window.innerHeight),
+        },
       };
       let geometry = new THREE.PlaneBufferGeometry(1, 1, 1, 1);
       let material = new THREE.ShaderMaterial({
@@ -207,8 +207,8 @@ export default function App() {
         vertexShader: vertex,
         fragmentShader: fragment,
         defines: {
-          PR: window.devicePixelRatio.toFixed(1)
-        }
+          PR: window.devicePixelRatio.toFixed(1),
+        },
       });
       mesh = new THREE.Mesh(geometry, material);
       mesh.position.set(offset.x, offset.y, 0);
@@ -219,13 +219,13 @@ export default function App() {
     function onMouseMove(e) {
       gsap.to(mouse, 0.5, {
         x: (e.clientX / window.innerWidth) * 2 - 1,
-        y: -(e.clientY / window.innerHeight) * 2 + 1
+        y: -(e.clientY / window.innerHeight) * 2 + 1,
       });
 
       if (mesh !== undefined) {
         gsap.to(mesh.rotation, 0.5, {
           x: -mouse.y * 0.3,
-          y: mouse.x * (Math.PI / 6)
+          y: mouse.x * (Math.PI / 6),
         });
       }
     }
@@ -246,9 +246,9 @@ export default function App() {
   }, []);
   return (
     <>
-      <section class="container" style={{ opacity: 0 }}>
-        <article class="tile">
-          <figure class="tile__figure">
+      <section className="container" style={{ opacity: 0 }}>
+        <article className="tile">
+          <figure className="tile__figure">
             <img
               src="https://picsum.photos/200/300"
               data-hover="https://picsum.photos/200/300"
