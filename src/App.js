@@ -252,7 +252,7 @@ export default function App() {
             <img
               src="https://picsum.photos/200/300"
               data-hover="https://picsum.photos/200/300"
-              class="tile__image"
+              className="tile__image"
               alt="My image"
               width="300"
             />
